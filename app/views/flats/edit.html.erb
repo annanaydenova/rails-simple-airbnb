@@ -1,0 +1,16 @@
+<h1>Edit flat</h1>
+
+<%= simple_form_for(@flat) do |f| %>
+  <%= f.input :name %>
+  <%= f.input :address %>
+  <%= f.input :description %>
+  <%= f.input :price_per_night %>
+  <%= f.input :number_of_guests %>
+  <%= f.submit %>
+<% end %>
+
+<hr>
+<%= link_to flats_path do %>
+  <i class="fa fa-history"></i> Back to list
+<% end %>
+

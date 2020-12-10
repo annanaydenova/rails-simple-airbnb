@@ -1,0 +1,23 @@
+<h1>All our Flats</h1>
+<p>All <%= @flats.count %> flats.</p>
+
+
+  <% @flats.each do |flat| %>
+    <h2><%= flat.name %></h2>
+    <p><%= flat.address %></p>
+    <p><%= flat.description %></p>
+    <p><%= flat.price_per_night %></p>
+    <p><%= flat.number_of_guests %></p>
+    <ul id="flats" style = "list-style: none">
+      <li style = "text-decoration: none">
+      <%= link_to 'More info', flat_path(flat.id)%>
+      </li>
+      <li><%= link_to 'Edit', edit_flat_path(flat) %>
+      </li>
+      <li><%= link_to 'Remove', flat_path(flat), method: :delete, data: { confirm: "Delete #{flat.name}?" } %>
+      </li>
+    </ul>
+  <% end %>
+
+
+
